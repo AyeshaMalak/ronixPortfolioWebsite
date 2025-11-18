@@ -5,7 +5,7 @@ const SideTextSidebar = () => {
     <div
       className="hidden sm:flex flex-col gap-6 fixed z-40 left-3 md:left-8"
       style={{
-        top: "50%",
+        top: "70%",
         transform: "translateY(-50%)",
         bottom: "80px", 
       }}
@@ -30,3 +30,4 @@ const SideTextSidebar = () => {
 };
 
 export default SideTextSidebar;
+

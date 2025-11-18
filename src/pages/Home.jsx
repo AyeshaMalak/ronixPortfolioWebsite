@@ -1,13 +1,13 @@
 import { useNavigate, Link } from "react-router-dom";
 import { ArrowDown } from "lucide-react";
 import { useState, useEffect } from "react";
-import SideScroller from "../components/SideScroller";
-import SideTextSidebar from "../components/SideTextSidebar";
 
 const Section = ({ id, title, text, img, reverse, moreLink, moreText }) => (
   <section
     id={id}
-    className={`flex flex-col ${reverse ? "md:flex-row-reverse" : "md:flex-row"} items-center justify-between max-w-7xl mx-auto my-20 px-6 py-12 bg-gray-100 rounded-xl gap-8`}
+    className={`flex flex-col ${
+      reverse ? "md:flex-row-reverse" : "md:flex-row"
+    } items-center justify-between max-w-7xl mx-auto my-20 px-6 py-12 bg-gray-100 rounded-xl gap-8`}
   >
     <div className="md:w-1/2 text-center md:text-left">
       <h2 className="text-4xl font-extrabold mb-4 text-[#00D4FF] tracking-wide">{title}</h2>
@@ -30,6 +30,7 @@ const Section = ({ id, title, text, img, reverse, moreLink, moreText }) => (
     </div>
   </section>
 );
+
 const AnimatedText = ({ text }) => {
   const [displayText, setDisplayText] = useState("");
   const [showCursor, setShowCursor] = useState(true);
@@ -41,7 +42,7 @@ const AnimatedText = ({ text }) => {
       index++;
       if (index === text.length) {
         clearInterval(interval);
-        setShowCursor(false); 
+        setShowCursor(false);
       }
     }, 150);
     return () => clearInterval(interval);
@@ -62,20 +63,21 @@ const Home = () => {
 
   return (
     <div className="relative">
-      {/* Side scroll indicators */}
-      <SideScroller />
 
-    
-      <div className="fixed top-0 left-0 right-0 w-full bg-white px-4 py-1.5 shadow-md z-50">
-        <div className="max-w-7xl mx-auto flex justify-center items-center">
-          <img src="/logo.jpeg" alt="RONIX Logo" className="h-16 sm:h-24 object-contain" />
+      {/* HEADER */}
+      <div className="fixed top-0 left-0 right-0 w-full bg-white px-4 py-3 shadow-md z-50">
+        <div className="max-w-7xl mx-auto flex justify-between items-center">
+          <img src="/logo.jpeg" alt="RONIX Logo" className="h-14 sm:h-20 object-contain" />
+
+          {/* HEADER NAV */}
+          <div className="hidden sm:flex gap-6 font-bold text-black uppercase tracking-wide text-sm">
+            <Link to="/portfolio" className="hover:text-[#0084FF]">Portfolio</Link>
+            <Link to="/contact" className="hover:text-[#0084FF]">Contact</Link>
+          </div>
         </div>
       </div>
 
-    {/* Vertical sidebar links */}
-      <SideTextSidebar />
-
-     
+      {/* HOME SECTION */}
       <section
         id="home"
         className="relative flex flex-col items-center justify-center min-h-screen px-6 py-16 pt-32 bg-gray-50"
@@ -107,7 +109,7 @@ const Home = () => {
       <Section
         id="section1"
         title="Our Design Expertise"
-        text="We create stunning visual designs that elevate your brand and leave a lasting impression. Our team focuses on unique concepts, color schemes, and layouts that make your brand stand out. Every design is tailored to reflect your brand’s personality and vision."
+        text="We create stunning visual designs that elevate your brand..."
         img="/image1.png"
         moreLink={() => navigate("/design")}
         moreText="More >"
@@ -117,7 +119,7 @@ const Home = () => {
       <Section
         id="section2"
         title="Development Solutions"
-        text="We build robust, scalable applications with modern technology stacks. Our developers ensure clean code, responsive design, and seamless user experiences. From web apps to mobile platforms, we create solutions that meet your business needs and future growth."
+        text="We build robust, scalable applications with modern technology stacks..."
         img="/image2.png"
         reverse
         moreLink={() => navigate("/develop")}
@@ -128,17 +130,19 @@ const Home = () => {
       <Section
         id="section3"
         title="Marketing Strategies"
-        text="Our marketing solutions help your business reach the right audience effectively. We create data-driven campaigns, optimize social media, and analyze trends to boost engagement. With strategic planning, we aim to increase brand awareness and generate measurable results for your business."
+        text="Our marketing solutions help your business reach the right audience effectively..."
         img="/image3.png"
       />
 
-      {/* Mobile bottom menu */}
-      <div className="sm:hidden fixed bottom-0 left-0 right-0 bg-white flex justify-around py-4 z-50 text-black">
-        <Link to="/portfolio" className="font-extrabold text-sm uppercase hover:text-[#0084FF] transition-colors">PORTFOLIO</Link>
-        <Link to="/contact" className="font-extrabold text-sm uppercase hover:text-[#0084FF] transition-colors">CONTACT</Link>
+      {/* MOBILE BOTTOM MENU */}
+      <div className="sm:hidden fixed bottom-0 left-0 right-0 bg-white flex justify-around py-4 z-50 text-black shadow-lg">
+        <Link to="/portfolio" className="font-extrabold text-sm uppercase hover:text-[#0084FF]">PORTFOLIO</Link>
+        <Link to="/contact" className="font-extrabold text-sm uppercase hover:text-[#0084FF]">CONTACT</Link>
       </div>
+
     </div>
   );
 };
 
 export default Home;
+        

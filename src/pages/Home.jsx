@@ -64,28 +64,33 @@ const Home = () => {
   return (
     <div className="relative">
 
-      {/* HEADER */}
+    
       <div className="fixed top-0 left-0 right-0 w-full bg-white px-4 py-3 shadow-md z-50">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
+        <div className="max-w-7xl mx-auto flex justify-center items-center">
           <img src="/logo.jpeg" alt="RONIX Logo" className="h-14 sm:h-20 object-contain" />
-
-          {/* HEADER NAV */}
-          <div className="hidden sm:flex gap-6 font-bold text-black uppercase tracking-wide text-sm">
-            <Link to="/portfolio" className="hover:text-[#0084FF]">Portfolio</Link>
-            <Link to="/contact" className="hover:text-[#0084FF]">Contact</Link>
-          </div>
         </div>
       </div>
 
-      {/* HOME SECTION */}
+      
       <section
         id="home"
         className="relative flex flex-col items-center justify-center min-h-screen px-6 py-16 pt-32 bg-gray-50"
       >
-        <div className="flex flex-wrap justify-center gap-6 sm:gap-12 md:gap-16 mb-12 font-extrabold text-base sm:text-lg md:text-xl uppercase tracking-wider text-black">
-          <Link to="/design" className="hover:text-[#0084FF] transition-colors">DESIGN</Link>
-          <Link to="/develop" className="hover:text-[#0084FF] transition-colors">DEVELOP</Link>
-          <Link to="/market" className="hover:text-[#0084FF] transition-colors">MARKET</Link>
+        
+        
+        <div className="hidden sm:flex flex-wrap justify-center gap-6 sm:gap-12 md:gap-14 mb-12 font-extrabold text-base sm:text-lg md:text-xl uppercase tracking-wider text-black">
+          <Link to="/design" className="hover:text-[#0084FF]">DESIGN</Link>
+          <Link to="/develop" className="hover:text-[#0084FF]">DEVELOP</Link>
+          <Link to="/market" className="hover:text-[#0084FF]">MARKET</Link>
+          <Link to="/portfolio" className="hover:text-[#0084FF]">PORTFOLIO</Link>
+          <Link to="/contact" className="hover:text-[#0084FF]">CONTACT</Link>
+        </div>
+
+        
+        <div className="flex sm:hidden flex-wrap justify-center gap-6 mb-12 font-extrabold text-base uppercase tracking-wider text-black">
+          <Link to="/design" className="hover:text-[#0084FF]">DESIGN</Link>
+          <Link to="/develop" className="hover:text-[#0084FF]">DEVELOP</Link>
+          <Link to="/market" className="hover:text-[#0084FF]">MARKET</Link>
         </div>
 
         <AnimatedText text="RONIX" />
@@ -134,7 +139,7 @@ const Home = () => {
         img="/image3.png"
       />
 
-      {/* MOBILE BOTTOM MENU */}
+      {/* MOBILE BOTTOM MENU: PORTFOLIO + CONTACT */}
       <div className="sm:hidden fixed bottom-0 left-0 right-0 bg-white flex justify-around py-4 z-50 text-black shadow-lg">
         <Link to="/portfolio" className="font-extrabold text-sm uppercase hover:text-[#0084FF]">PORTFOLIO</Link>
         <Link to="/contact" className="font-extrabold text-sm uppercase hover:text-[#0084FF]">CONTACT</Link>

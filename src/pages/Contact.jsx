@@ -1,14 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SideTextSidebar from "../components/SideTextSidebar";
+
 
 const Contact = () => {
   return (
     <div className="relative bg-white min-h-screen font-sans">
-
-     
-      <SideTextSidebar />
-
   
       <div className="fixed top-0 left-0 right-0 w-full bg-white px-4 py-1.5 shadow-md z-50">
         <div className="max-w-7xl mx-auto flex justify-center items-center">
@@ -103,3 +99,4 @@ const Contact = () => {
 };
 
 export default Contact;
+

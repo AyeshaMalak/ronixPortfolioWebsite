@@ -1,13 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SideTextSidebar from "../components/SideTextSidebar"; // Sidebar import
 
 const Develop = () => {
   return (
     <div className="bg-white min-h-screen font-sans relative">
       
-      {/* Side Text Sidebar */}
-      <SideTextSidebar />
+      
 
       {/* Header */}
       <div className="fixed top-0 left-0 right-0 w-full bg-white px-4 py-1.5 shadow-md z-50">
@@ -102,3 +100,4 @@ const Section = ({ title, text }) => (
 );
 
 export default Develop;
+

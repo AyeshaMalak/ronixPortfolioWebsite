@@ -1,6 +1,7 @@
 import { useNavigate, Link } from "react-router-dom";
 import { ArrowDown } from "lucide-react";
 import { useState, useEffect } from "react";
+import SideTextSidebar from "../components/SideTextSidebar"; // added
 
 const Section = ({ id, title, text, img, reverse, moreLink, moreText }) => (
   <section
@@ -63,30 +64,25 @@ const Home = () => {
 
   return (
     <div className="relative">
+      <SideTextSidebar /> {/* Fixed left sidebar for all pages */}
 
-    
       <div className="fixed top-0 left-0 right-0 w-full bg-white px-4 py-3 shadow-md z-50">
         <div className="max-w-7xl mx-auto flex justify-center items-center">
           <img src="/logo.jpeg" alt="RONIX Logo" className="h-14 sm:h-20 object-contain" />
         </div>
       </div>
 
-      
+      {/* Hero Section */}
       <section
         id="home"
         className="relative flex flex-col items-center justify-center min-h-screen px-6 py-16 pt-32 bg-gray-50"
       >
-        
-        
         <div className="hidden sm:flex flex-wrap justify-center gap-6 sm:gap-12 md:gap-14 mb-12 font-extrabold text-base sm:text-lg md:text-xl uppercase tracking-wider text-black">
           <Link to="/design" className="hover:text-[#0084FF]">DESIGN</Link>
           <Link to="/develop" className="hover:text-[#0084FF]">DEVELOP</Link>
           <Link to="/market" className="hover:text-[#0084FF]">MARKET</Link>
-          <Link to="/portfolio" className="hover:text-[#0084FF]">PORTFOLIO</Link>
-          <Link to="/contact" className="hover:text-[#0084FF]">CONTACT</Link>
         </div>
 
-        
         <div className="flex sm:hidden flex-wrap justify-center gap-6 mb-12 font-extrabold text-base uppercase tracking-wider text-black">
           <Link to="/design" className="hover:text-[#0084FF]">DESIGN</Link>
           <Link to="/develop" className="hover:text-[#0084FF]">DEVELOP</Link>
@@ -110,7 +106,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* SECTION 1 */}
+      {/* Sections */}
       <Section
         id="section1"
         title="Our Design Expertise"
@@ -119,8 +115,6 @@ const Home = () => {
         moreLink={() => navigate("/design")}
         moreText="More >"
       />
-
-      {/* SECTION 2 */}
       <Section
         id="section2"
         title="Development Solutions"
@@ -130,8 +124,6 @@ const Home = () => {
         moreLink={() => navigate("/develop")}
         moreText="More >"
       />
-
-      {/* SECTION 3 */}
       <Section
         id="section3"
         title="Marketing Strategies"
@@ -139,12 +131,11 @@ const Home = () => {
         img="/image3.png"
       />
 
-      {/* MOBILE BOTTOM MENU: PORTFOLIO + CONTACT */}
+      {/* Mobile Bottom Menu */}
       <div className="sm:hidden fixed bottom-0 left-0 right-0 bg-white flex justify-around py-4 z-50 text-black shadow-lg">
         <Link to="/portfolio" className="font-extrabold text-sm uppercase hover:text-[#0084FF]">PORTFOLIO</Link>
         <Link to="/contact" className="font-extrabold text-sm uppercase hover:text-[#0084FF]">CONTACT</Link>
       </div>
-
     </div>
   );
 };

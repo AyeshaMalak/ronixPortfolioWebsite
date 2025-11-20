@@ -7,7 +7,7 @@ const SideTextSidebar = () => {
       style={{
         top: "65%",
         transform: "translateY(-50%)",
-        bottom: "80px", 
+        bottom: "80px",
       }}
     >
       <Link
@@ -30,7 +30,3 @@ const SideTextSidebar = () => {
 };
 
 export default SideTextSidebar;
-
-
-
-
